@@ -2,33 +2,9 @@ import graphene
 from graphene_django import DjangoObjectType
 import assessment.jobs.schema
 import assessment.jobs.mutations
-from assessment.jobs.models import UserModel
 from assessment.jobs.models import Job 
 from assessment.jobs.models import Category
 from assessment.jobs.models import JobCategory
-
-class UserType(DjangoObjectType):
-    class Meta:
-        model = UserModel
-
-class CreateUser(graphene.Mutation):
-    id = graphene.Int()
-    name = graphene.String()
-    last_name = graphene.String()
-
-    class Arguments:
-        last_name = graphene.String()
-        name = graphene.String()
-
-    def mutate(self, info, name, last_name):
-        user = UserModel(name=name, last_name=last_name)
-        user.save()
-
-        return CreateUser(
-            id=user.id,
-            name=user.name,
-            last_name=user.last_name,
-        )
 
 
 
