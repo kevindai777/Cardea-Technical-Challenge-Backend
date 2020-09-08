@@ -16,7 +16,7 @@ Query Parameters:
   - id (int)
   - name (str)
   
-- JobCategory:
+- JobCategory (Join table for many-many relationship):
   - id (int)
   - jobID (int)
   - categoryID (int)
