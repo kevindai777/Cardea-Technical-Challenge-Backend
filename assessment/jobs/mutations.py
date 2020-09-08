@@ -95,4 +95,6 @@ class Query(graphene.ObjectType):
         return JobCategory.objects.all()
 
 class Mutation(graphene.ObjectType):
+    create_job = CreateJob.Field()
+    create_category = CreateCategory.Field()
     create_jobcategory = CreateJobCategory.Field()
