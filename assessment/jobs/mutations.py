@@ -1,6 +1,5 @@
 import graphene
 from graphene_django import DjangoObjectType
-from assessment.jobs.models import Example as ExampleModel
 from assessment.jobs.models import Job 
 from assessment.jobs.models import Category
 from assessment.jobs.models import JobCategory
